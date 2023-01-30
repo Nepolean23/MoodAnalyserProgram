@@ -5,11 +5,11 @@ namespace Unittest1
     [TestClass]
     public class Tests
     {
-        MoodAnalyser moodAnalyser;
+        SimpleMoodAnalyzerProgram moodAnalyzerProgram;
         [TestMethod]
         public void Setup()
         {
-            moodAnalyser = new MoodAnalyser();
+            moodAnalyzerProgram = new SimpleMoodAnalyzerProgram();
         }
         /// <summary>
         /// TC1.1 Given “I am in Sad Mood” message Should Return SAD
@@ -18,10 +18,10 @@ namespace Unittest1
         public void GivenMessage_WhenSad_ShouldReturnSadParameterLess_Constructor()
         {
             //Arrange
-            moodAnalyser = new MoodAnalyser();
+            moodAnalyzerProgram = new SimpleMoodAnalyzerProgram();
             string msg = "I am in SAD mood";
             //Act
-            string message = moodAnalyser.AnalyseMoodWithoutConstructor(msg);
+            string message = moodAnalyzerProgram.AnalyseMoodWithoutConstructor(msg);
             //Assert
             Assert.AreEqual("SAD", message);
         }
@@ -31,9 +31,9 @@ namespace Unittest1
         [TestMethod]
         public void GivenMessage_WhenAnyMood_ShouldReturnHappyParameterLess_Constructor()
         {
-            moodAnalyser = new MoodAnalyser();
+            moodAnalyzerProgram = new SimpleMoodAnalyzerProgram();
             string msg = "I am in Any mood";
-            string message = moodAnalyser.AnalyseMoodWithoutConstructor(msg);
+            string message = moodAnalyzerProgram.AnalyseMoodWithoutConstructor(msg);
             Assert.AreEqual("HAPPY", message);
         }
         /// <summary>
@@ -42,8 +42,8 @@ namespace Unittest1
         [TestMethod]
         public void GivenMessage_WhenSad_ShouldReturnSad()
         {
-            moodAnalyser = new MoodAnalyser("I am in Sad mood");
-            string message = moodAnalyser.AnalyseMood();
+            moodAnalyzerProgram = new SimpleMoodAnalyzerProgram("I am in Sad mood");
+            string message = moodAnalyzerProgram.AnalyseMood();
             Assert.AreEqual("SAD", message);
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Unittest1
         [TestMethod]
         public void GivenMessage_WhenHappy_ShouldReturnHappy()
         {
-            moodAnalyser = new MoodAnalyser("I am in Happy mood");
-            string message = moodAnalyser.AnalyseMood();
+            moodAnalyzerProgram = new SimpleMoodAnalyzerProgram("I am in Happy mood");
+            string message = moodAnalyzerProgram.AnalyseMood();
             Assert.AreEqual("HAPPY", message);
         }
     }
