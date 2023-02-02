@@ -38,6 +38,7 @@ namespace MoodAnalyzerProgram
             {
                 if (message.ToLower().Contains("sad"))
                     return "SAD";
+
                 else return "HAPPY";
             }
             catch (NullReferenceException)
